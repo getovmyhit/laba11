@@ -1,0 +1,43 @@
+ВЫВЕСТИ ВСЕХ КЛИЕНТОВ КОТОРЫЕ НЕ КУПИЛИ НИ ОДНОЙ ПУТЁВКИ
+select Клиент.*
+from клиент
+where not exists
+(select ТурПутевка.*
+from ТурПутевка
+where ТурПутевка.id_клиент=Клиент.id)
+
+вывести отель в которых не купили ни одной путёвки
+select Отель.*
+from Отель
+where not exists
+(select ТурПутевка.*
+from ТурПутевка
+where ТурПутевка.id_отель=Отель.id)
+
+вывести фам раб оформ путёвку в отель содерж в названии слово пхукет
+НЕ КОРРЕЛИРОВАННЫЙ ПОДЗАПРОС
+
+select r.фамилия
+from работник r
+where r.id in
+(select tp.id_работник 
+from ТурПутевка tp
+where tp.id_отель in
+(select o.id
+from Отель o
+where o.название like '%PHUKET%'))
+
+КОРРЕЛИРОВАННЫЙ с exists
+
+select r.фамилия
+from работник r
+where EXISTS
+(select tp.*
+from ТурПутевка tp
+where r.id=tp.id_работник and
+tp.id_отель in
+(select o.id
+from Отель o
+where o.название like '%PHUKET%'))
+
+вывести тех раб которые оформили больше одной путёвки
