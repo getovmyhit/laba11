@@ -1,0 +1,4 @@
+C:\Users\student\Desktop\17Клиент-сервер\17Клиент-сервер\bin\Debug\17Клиент-сервер.exe
+C:\Users\student\Desktop\17Клиент-сервер\17Клиент-сервер\bin\Debug\17Клиент-сервер.pdb
+C:\Users\student\Desktop\17Клиент-сервер\17Клиент-сервер\obj\x86\Debug\17Клиент-сервер.exe
+C:\Users\student\Desktop\17Клиент-сервер\17Клиент-сервер\obj\x86\Debug\17Клиент-сервер.pdb
